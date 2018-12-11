@@ -1,0 +1,25 @@
+code-push : 
+    1. android(reactForMdoumiTablet-Android) :
+        1.1. production : Y7PG_GxAYvgyk8SGTxFpTQHkWAbI7c46f80d-1102-408b-b2bb-ff449c545c5d
+        1.2. Staging : 5I3yLPAbTxTFctagYCwiUBOA2sON7c46f80d-1102-408b-b2bb-ff449c545c5d
+
+    2. ios(reactForMdoumiTablet-ios) :
+        2.1. production : SOiwW5VvV99nw5yEty0ZsgKHq2Ag7c46f80d-1102-408b-b2bb-ff449c545c5d
+        2.2. Staging : vl47DU9YKzBLDJwcmv79iD9K_P3f7c46f80d-1102-408b-b2bb-ff449c545c5d
+
+register
+code-push app add reactForMdoumiTablet-Android Android react-native
+code-push app add reactForMdoumiTablet-ios ios react-native
+
+Release
+명령어
+react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+https://facebook.github.io/react-native/docs/signed-apk-android.html
+
+adb reverse tcp:8081 tcp:8081
+
+code-push release-react <appName> <platform>
+
+code-push release-react reactForMdoumiTablet-ios ios
+code-push release-react reactForMdoumiTablet-Android android

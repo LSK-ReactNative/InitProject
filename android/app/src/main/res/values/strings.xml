@@ -1,0 +1,4 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">5I3yLPAbTxTFctagYCwiUBOA2sON7c46f80d-1102-408b-b2bb-ff449c545c5d</string>
+    <string name="app_name">reactForMdoumiTablet</string>
+</resources>
